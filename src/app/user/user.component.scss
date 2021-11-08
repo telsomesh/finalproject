@@ -1,0 +1,30 @@
+label {
+  width: 180px;
+  clear: left;
+  padding: 10px;
+}
+
+input,
+label,
+select,
+button {
+  float: left;
+  border-radius: 5px;
+
+}
+
+table {
+  position: absolute;
+  left: 100px;
+  top: 450px;
+}
+
+h1{
+  position: absolute;
+  left:700px;
+  top: 50px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

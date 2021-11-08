@@ -1,0 +1,38 @@
+clearUser() {
+    userdetails.Userid='';
+    userdetails.firstName = '';
+    this.userDetails.lastName = '';
+    this.userDetails.age = '';
+    this.userDetails.gender = '';
+  }
+
+
+
+  <label class='secondLabel' >Edit Details</label>
+<input type='text' class='delinput' placeholder="Enter User ID" [(ngModel)]="modifyUser" autocomplete="off">
+<button type="button" class="button2" (click)="modifyUserDetails()">Modify</button>
+<button type="button" class="button2" (click)="updateUSer()">Update</button>
+
+
+
+
+saveUpdateUser() {
+  const user = new userdetails(this.Userid,this.firstName,this.lastName,this.age,this.gender);
+
+  this.userList.push(
+   this.userObj
+  );
+  
+  
+}
+
+deleteUser(selectedUser: userdetails){
+  
+    userList.findIndex(this.userList.userId=== selectedUser.userId){
+      this.userList.splice(i,1);
+    }
+   
+
+}
+
+userList: userdetails[] = [];
