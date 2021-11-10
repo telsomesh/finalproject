@@ -3,15 +3,15 @@
 export class userdetails {
      userId: string='';
      firstName:string='';
+     middleName:string='';
      lastName:string='';
      age:string='';
+     Dob:string=''
      gender:string='';
-     userList:any[]=[];
-
+     address:string='';
      
 
-    createUser (user: {}) {
-        this.userList.push(user);
+    
 
     }
 
@@ -21,4 +21,4 @@ export class userdetails {
     
 
 
-}
+

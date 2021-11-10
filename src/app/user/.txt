@@ -36,3 +36,15 @@ deleteUser(selectedUser: userdetails){
 }
 
 userList: userdetails[] = [];
+
+
+
+
+
+(ngModel)]="userObj.userId"
+
+[(ngModel)]="userObj.firstName" 
+
+[(ngModel)]="userObj.lastName"
+
+[(ngModel)]="userObj.age"

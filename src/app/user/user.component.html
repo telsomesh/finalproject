@@ -1,12 +1,11 @@
 <h2>Add User</h2>
-<form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <label>UserId</label>
   <input 
   type='text' 
   class='form-control'
-  ngModel
   name="userId"
-  required
+  formControlName='userName'
   >
   <label>First Name</label>
   <input 
@@ -14,19 +13,21 @@
   class="form-control" 
   placeholder="eg.Somesh" 
   autocomplete="off"
-  ngModel
   name='firstName'
-  required
-  minlength="5"
-  maxlength="60"
+  formControlName="firstName"
   >
+  <span 
+  *ngIf="!signupForm.get('firstName')?.valid && signupForm.get('firstName')?.touched"
+  class="help-block">
+    Please enter valid 
+  </span>
   <br>
   <label>Middle Name</label>
   <input 
   type="text" 
   class="form-control"  
-  ngModel
-  name='middleName'>
+  name='middleName'
+  formControlName="middleName">
   <br>
   <br>
   <label>Last Name</label>
@@ -34,40 +35,36 @@
   type="text" 
   class="form-control" 
   placeholder="eg.Telang" 
-  required
-  ngModel
   name='lastName'
-  minlength="5"
-  maxlength="60"
-  #lname="ngModel">
-  <span class="help-block" *ngIf="!lname.valid && lname.touched" >Please Enter Valid Name!</span>
+  formControlName='lastName'
+  >
   <br>
   <label>age</label>
   <input 
   type="number" 
   class="form-control" 
-  ngModel
   name='age'
-  required>
+  formControlName='age'
+  >
   <br>
   <label>Date of Birth</label>
   <input 
   type="text" 
   class="form-control"
-  ngModel
-  name="Dob">
+  name="Dob"
+  formControlName='dateOfBirth'>
   <br>
   <label>Address</label>
   <input 
   type="text" 
   class="form-control"
-  ngModel
   name='Address'
-  required>
+  formControlName='address'
+  >
   <br>
   <button 
   type="submit"
-  [disabled]="!f.valid" >submit</button>
+   >submit</button>
 
 </form>
  
